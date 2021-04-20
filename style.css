@@ -1,0 +1,41 @@
+h1, h2 {
+    color: #1f3c5c;
+    font-family: 'Original Surfer', cursive;
+    text-align: center;
+    font-size: 5rem;
+}
+h2 {
+    font-size: 3rem;
+}
+
+.btn {
+    width: 30%;
+    text-align: center;
+    color: #1f3c5c;
+    border-color: #1f3c5c;
+    margin: 5px 35%;
+    border-width: 2px;
+}
+.btn:hover {
+    color: #fff;
+    background-color: #1f3c5c;
+    border-color: #1f3c5c;
+}
+
+.kruh {
+    width: 5%;
+    position: absolute;
+}
+
+@media only screen and (max-width: 600px) {
+h1 {
+    font-size: 3.5rem;
+}
+.kruh {
+    width: 10%;
+}
+.btn {
+    width: 60%;
+    margin: 5px 20%;
+}
+}
