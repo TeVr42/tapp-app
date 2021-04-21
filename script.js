@@ -37,7 +37,7 @@ function VytvorKruh(event) {
     var zdroj = zdrojeObrazku[index];
 
     kruh.setAttribute("src", "images/" + zdroj);
-    kruh.setAttribute("id", "#TentoKruh" + i);
+    kruh.setAttribute("id", "TentoKruh" + i);
     kruh.setAttribute("class", "kruh");
     kruh.setAttribute("onclick", "PriKliknuti(event)");
     document.body.appendChild(kruh);
