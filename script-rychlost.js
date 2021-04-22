@@ -27,29 +27,26 @@ function SpustitOdpocet(event) {
 }
 
 function PredcasneKliknuti(event) {
-    hraBezi = false;
-    napis.style.visibility = "visible";
+    Konec();
     napis.textContent = "Moc brzo!";
-    tlacitkoZnovu.style.visibility = "visible";
-    velkyKruh.style.visibility = "hidden";
-    bilyKruh.style.visibility = "hidden";
-    tlacitkoZnovu.style.marginTop = "50px";
 }
 
 function SpravneKliknuti(event) {
+    Konec();
+    var prodleva = (Date.now() - start) + " milisekund";
+    napis.textContent = prodleva;
+    napis.style.fontSize = "3rem";
+}
+
+
+function Konec(event) {
     hraBezi = false;
     napis.style.visibility = "visible";
-
     tlacitkoZnovu.style.visibility = "visible";
     velkyKruh.style.visibility = "hidden";
     bilyKruh.style.visibility = "hidden";
     tlacitkoZnovu.style.marginTop = "50px";
     tlacitkoDomu.style.visibility = "visible";
-    
-    var prodleva = (Date.now() - start) + " milisekund";
-
-    napis.textContent = prodleva;
-    napis.style.fontSize = "3rem";
 }
 
 function HratZnovu(event) {
