@@ -19,14 +19,15 @@ var tlacitko1 = document.getElementById("tlacitko1");
 var tlacitko2 = document.getElementById("tlacitko2");
 var tlacitko3 = document.getElementById("tlacitko3");
 var tlacitko4 = document.getElementById("tlacitko4");
-var napis = document.getElementById("napis");
+var napis = document.getElementById("napis-postreh");
+var tlacitkoDomu = document.getElementById("domu-postreh");
 
 function VytvorKruh(event) {
     if (i == 0) {
-        tlacitko1.style.visibility = "hidden";
-        tlacitko2.style.visibility = "hidden";
-        tlacitko3.style.visibility = "hidden";
-        tlacitko4.style.visibility = "hidden";
+        tlacitko1.remove();
+        tlacitko2.remove();
+        tlacitko3.remove();
+        tlacitko4.remove();
         napis.style.visibility = "hidden";
         skoreNapis.style.visibility = "visible";
     }
@@ -37,7 +38,7 @@ function VytvorKruh(event) {
     var zdroj = zdrojeObrazku[index];
 
     kruh.setAttribute("src", "images/" + zdroj);
-    kruh.setAttribute("id", "TentoKruh" + i);
+    kruh.setAttribute("id", "Kruh" + i);
     kruh.setAttribute("class", "kruh");
     kruh.setAttribute("onclick", "PriKliknuti(event)");
     document.body.appendChild(kruh);
@@ -65,6 +66,8 @@ function PriKliknuti(event) {
     if (vsechnyKruhy.length == 0) {
     napis.style.visibility = "visible";
     tlacitkoZnovu.style.visibility = "visible";
+    tlacitkoDomu.style.visibility = "visible";
+    tlacitkoDomu.style.marginTop = "-100px";
     napis.style.marginTop = "50px";
     tlacitkoZnovu.style.marginTop = "50px";
     napis.textContent = "Uklizeno!";

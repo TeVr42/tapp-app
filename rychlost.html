@@ -21,19 +21,18 @@
 </head>
 
 <body>
+    <h2 id="stopky" style="visibility: hidden"> 00:00 </h2>
+	<h1 id="napis-rychlost"> Nachystat!</h1>
 
-	<h1 class="napis-odsazeni"> Vyber si hru </h1>
+	<button id="tlZnovu" class="btn btn-outline-info btn-lg" onclick="HratZnovu(event)" style="visibility: hidden">Hrát znovu 🦥</button><br>
 
+	<button id="tlHrat" class="btn btn-outline-info btn-lg" onclick="Hrat(event)">Hrát 🦅</button> 
 
-	<a href="postreh.html"><button class="btn btn-outline-info btn-lg" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Pokus se co nejrychleji uklidit displej. Klikej na přibývající kolečka.">Postřeh 🦜 </button></a> <br>
+    <a href="index.html"><button id="domu-rychlost" class="btn btn-outline-info btn-lg" style="visibility: hidden">Hlavní stránka 🐾 </button> <br></a>
 
-    <a href="presnost.html"><button class="btn btn-outline-info btn-lg">Přesnost 🦚 </button> <br></a>
-    
-    <a href="rychlost.html"><button class="btn btn-outline-info btn-lg">Rychlost 🐧 </button> <br></a>
+    <img id="bily-kruh" class="kruh-tlacitko" src="images/k-bily.png" style="visibility: hidden" onclick="PredcasneKliknuti(event)">
+    <img id="kruh-tlacitko" class="kruh-tlacitko" src="images/k7.png" style="visibility: hidden" onclick="SpravneKliknuti(event)">
 
-    <a href="info.html"><button class="btn btn-outline-info btn-lg">Info 🐾 </button> <br></a>
-
-
-    <script src="script.js"></script>
+    <script src="script-rychlost.js"></script>
   </body>
 </html>

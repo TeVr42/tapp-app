@@ -21,19 +21,16 @@
 </head>
 
 <body>
+    <h2 id="casovac" style="visibility: hidden"> 00:00 </h2>
+	<h1 id="napis-presnost" class=""> Pozor na barvy</h1>
 
-	<h1 class="napis-odsazeni"> Vyber si hru </h1>
+	<button id="tZnovu" class="btn btn-outline-info btn-lg" onclick="HratZnovu(event)" style="visibility: hidden">Hrát znovu 🐒</button><br>
 
-
-	<a href="postreh.html"><button class="btn btn-outline-info btn-lg" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Pokus se co nejrychleji uklidit displej. Klikej na přibývající kolečka.">Postřeh 🦜 </button></a> <br>
-
-    <a href="presnost.html"><button class="btn btn-outline-info btn-lg">Přesnost 🦚 </button> <br></a>
+	<button id="tHrat" class="btn btn-outline-info btn-lg" onclick="Hrat(event)">Hrát 🦝 </button> 
+    <img id="velky-kruh" class="velky-kruh">
     
-    <a href="rychlost.html"><button class="btn btn-outline-info btn-lg">Rychlost 🐧 </button> <br></a>
+    <a href="index.html"><button id="domu-presnost" class="btn btn-outline-info btn-lg" style="visibility: hidden">Hlavní stránka 🐾 </button> <br></a>
 
-    <a href="info.html"><button class="btn btn-outline-info btn-lg">Info 🐾 </button> <br></a>
-
-
-    <script src="script.js"></script>
+    <script src="script-presnost.js"></script>
   </body>
 </html>
