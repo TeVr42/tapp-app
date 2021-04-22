@@ -87,7 +87,7 @@ function VytvorKruh(event, barva, akce) {
     kruhY = documentVyska*0.55;
     } else {
     kruhX = Math.floor(Math.random() * 6) * documentSirka*0.10 + documentSirka*0.22;
-    kruhY = documentVyska*0.7;
+    kruhY = documentVyska*0.75;
     }
 
     kruh.style.left = kruhX + "px";
@@ -148,7 +148,7 @@ function PocitadloCasu(event) {
     if (minuty == 60) {
     hraBezi = false;
     }
-    
+
     var napisVeteriny;
     var napisMinuty;
     if (vteriny < 10) {
