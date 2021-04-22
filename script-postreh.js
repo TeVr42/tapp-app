@@ -21,6 +21,8 @@ var tlacitko3 = document.getElementById("tlacitko3");
 var tlacitko4 = document.getElementById("tlacitko4");
 var napis = document.getElementById("napis-postreh");
 var tlacitkoDomu = document.getElementById("domu-postreh");
+var anchorDomu = document.getElementById("anchor-postreh");
+
 
 function VytvorKruh(event) {
     if (i == 0) {
@@ -73,6 +75,7 @@ function PriKliknuti(event) {
     setTimeout(function(){  
     tlacitkoZnovu.style.visibility = "visible";
     tlacitkoDomu.style.visibility = "visible";
+    anchorDomu.style.visibility = "visible";
     tlacitkoDomu.style.marginTop = "-100px";
     tlacitkoZnovu.style.marginTop = "50px";
     }, 1000)
