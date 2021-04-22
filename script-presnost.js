@@ -14,26 +14,32 @@ var hraBezi = true;
 var i = 0;
 var vteriny = 0;
 var minuty = 0;
+var rychlostVymazani;
 
 var velkyKruh = document.getElementById("velky-kruh");
 velkyKruh.style.visibility = "hidden";
 var hlavniBarva;
 
 var tlacitkoZnovu = document.getElementById("tZnovu");
-var tlacitkoHrat = document.getElementById("tHrat");
+var tlacitkoHrat1 = document.getElementById("tHrat1");
+var tlacitkoHrat2 = document.getElementById("tHrat2");
+var tlacitkoHrat3 = document.getElementById("tHrat3");
 var napis = document.getElementById("napis-presnost");
 var casNapis = document.getElementById("casovac");
 var tlacitkoDomu = document.getElementById("domu-presnost");
 var anchorDomu = document.getElementById("domu-a");
 
-function Hrat(event) {
+function Hrat(event, rychlost) {
     var index = Math.floor(Math.random() * zdrojeObrazku.length);
     var zdroj = zdrojeObrazku[index];
+    rychlostVymazani = rychlost;
     hlavniBarva = "images/" + zdroj;
     velkyKruh.setAttribute("src", hlavniBarva);
     zdrojeObrazku.splice(index, 1);
 
-    tlacitkoHrat.remove();
+    tlacitkoHrat1.remove();
+    tlacitkoHrat2.remove();
+    tlacitkoHrat3.remove();
     napis.style.visibility = "hidden";
     velkyKruh.style.visibility = "visible";
     casNapis.style.visibility = "visible";
@@ -108,12 +114,6 @@ function SpravneKliknuti(event) {
 
 
 function VymazatKruh(event, kruhKVymazani) {
-    var rychlostVymazani;
-    if (malaObrazovka.matches) { 
-    rychlostVymazani = 600;
-    } else {
-    rychlostVymazani = 800;
-    };
     setTimeout(function(){ kruhKVymazani.remove(); }, rychlostVymazani);
 }
 
