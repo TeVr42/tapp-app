@@ -137,18 +137,18 @@ function KlinutiNaKruh(event) {
 
 function KonecHry(event) {
     hraBezi = false
-
+    napis.style.visibility = "visible";
     var kruhy = document.getElementsByClassName("kruh");
     for (i = 0; i < kruhy.length; i++) {
     kruhy[i].remove();
     }
     velkyKruh.style.visibility = "hidden";
 
-    napis.style.visibility = "visible";
-    tlacitkoZnovu.style.visibility = "visible";
+    setTimeout(function(){    tlacitkoZnovu.style.visibility = "visible";
     tlacitkoZnovu.style.marginTop = "50px";
     tlacitkoDomu.style.visibility = "visible";
     tlacitkoDomu.style.marginTop = "-20px";
+    }, 2000)
 }
 
 function PocitadloCasu(event) {
