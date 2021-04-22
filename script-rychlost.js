@@ -6,6 +6,7 @@ var tlacitkoHrat = document.getElementById("tlHrat");
 var napis = document.getElementById("napis-rychlost");
 var stopkyNapis = document.getElementById("stopky");
 var tlacitkoDomu = document.getElementById("domu-rychlost");
+var anchorDomu = document.getElementById("domu-a");
 
 var start;
 var hraBezi = true;
@@ -41,6 +42,7 @@ function SpravneKliknuti(event) {
     napis.style.visibility = "visible";
 
     tlacitkoZnovu.style.visibility = "visible";
+    anchorDomu.style.visibility = "visible";
     velkyKruh.style.visibility = "hidden";
     bilyKruh.style.visibility = "hidden";
     tlacitkoZnovu.style.marginTop = "50px";

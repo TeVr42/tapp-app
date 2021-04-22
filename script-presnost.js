@@ -109,9 +109,9 @@ function SpravneKliknuti(event) {
 function VymazatKruh(event, kruhKVymazani) {
     var rychlostVymazani;
     if (malaObrazovka.matches) { 
-    rychlostVymazani = 500;
+    rychlostVymazani = 600;
     } else {
-    rychlostVymazani = 700;
+    rychlostVymazani = 800;
     };
     setTimeout(function(){ kruhKVymazani.remove(); }, rychlostVymazani);
 }
