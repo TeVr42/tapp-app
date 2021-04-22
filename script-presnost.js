@@ -82,10 +82,11 @@ function VytvorKruh(event, barva, akce) {
     document.body.appendChild(kruh);
     VymazatKruh(event, kruh);
 
-    kruhX = Math.floor(Math.random() * 6) * documentSirka*0.12 + documentSirka*0.2;
     if (malaObrazovka.matches) {
+    kruhX = Math.floor(Math.random() * 6) * documentSirka*0.14 + documentSirka*0.10;
     kruhY = documentVyska*0.55;
     } else {
+    kruhX = Math.floor(Math.random() * 6) * documentSirka*0.10 + documentSirka*0.22;
     kruhY = documentVyska*0.7;
     }
 
@@ -129,15 +130,17 @@ function KonecHry(event) {
     kruhy[i].style.visibility = "hidden";
     }
     velkyKruh.remove();
-   tlacitkoZnovu.style.visibility = "visible";
-    tlacitkoZnovu.style.marginTop = "50px";
+    tlacitkoZnovu.style.visibility = "visible";
     tlacitkoDomu.style.visibility = "visible";
     anchorDomu.style.visibility = "visible";
+    tlacitkoZnovu.style.marginTop = "50px";
+
 }
 
 function PocitadloCasu(event) {
     if (hraBezi){    
     vteriny ++;
+
     if (vteriny == 60) {
     vteriny = vteriny - 60;
     minuty ++;
@@ -145,6 +148,7 @@ function PocitadloCasu(event) {
     if (minuty == 60) {
     hraBezi = false;
     }
+    
     var napisVeteriny;
     var napisMinuty;
     if (vteriny < 10) {
