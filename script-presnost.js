@@ -24,6 +24,7 @@ var tlacitkoHrat = document.getElementById("tHrat");
 var napis = document.getElementById("napis-presnost");
 var casNapis = document.getElementById("casovac");
 var tlacitkoDomu = document.getElementById("domu-presnost");
+var anchorDomu = document.getElementById("domu-a");
 
 function Hrat(event) {
     var index = Math.floor(Math.random() * zdrojeObrazku.length);
@@ -146,6 +147,7 @@ function KonecHry(event) {
     setTimeout(function(){    tlacitkoZnovu.style.visibility = "visible";
     tlacitkoZnovu.style.marginTop = "50px";
     tlacitkoDomu.style.visibility = "visible";
+    anchorDomu.style.visibility = "visible";
     }, 1000)
 }
 
