@@ -40,6 +40,10 @@ h3 {
     margin: 5px 35%;
     border-width: 2px;
 }
+.btn-dark {
+    background-color: #1f3c5c;
+    color: #fff;
+}
 .btn:hover {
     color: #fff;
     background-color: #1f3c5c;
