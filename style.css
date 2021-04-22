@@ -23,13 +23,13 @@ h3 {
     margin: 0 35%;
     width: 30%;  
 }
-.napis-odsazeni {
+.title-margin {
     margin: 70px 0;
 }
-.horni-odsazeni {
+.title-margin-top {
     margin: 70px 0 0;
 }
-.dolni-odsazeni {
+.title-margin-bottom {
     margin: 0 0 70px;
 }
 
