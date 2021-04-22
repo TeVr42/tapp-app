@@ -40,7 +40,7 @@ function Hrat(event, rychlost) {
     tlacitkoHrat1.remove();
     tlacitkoHrat2.remove();
     tlacitkoHrat3.remove();
-    napis.style.visibility = "hidden";
+    napis.textContent = "Tvá barva:";
     velkyKruh.style.visibility = "visible";
     casNapis.style.visibility = "visible";
     setInterval(GenerujKruhy, 200);
@@ -58,48 +58,41 @@ function GenerujKruhy(event) {
 
 function VytvorCiziKruh(event) {
     if (hraBezi) {
-    var ciziKruh = document.createElement("img");
-
+    
     var index = Math.floor(Math.random() * zdrojeObrazku.length);
     var zdroj = zdrojeObrazku[index];
-
-    ciziKruh.setAttribute("src", "images/" + zdroj);
-    ciziKruh.setAttribute("id", "Kruh" + i);
-    ciziKruh.setAttribute("class", "kruh");
-    ciziKruh.setAttribute("onclick", "SpatneKliknuti(event)");
-    document.body.appendChild(ciziKruh);
-    VymazatKruh(event, ciziKruh);
-
-    kruhX = Math.floor(Math.random() *(documentSirka - delkaX));
-    kruhY = Math.floor(Math.random() * (documentVyska - delkaY));
-
-    ciziKruh.style.left = kruhX + "px";
-    ciziKruh.style.top = kruhY + "px";
-
-    i++;
+    var barva = "images/" + zdroj;
+    VytvorKruh(event, barva, "SpatneKliknuti(event)");
 }
 }
 
 function VytvorVlastniKruh(event) {
     if (hraBezi) {
-    var vlastniKruh = document.createElement("img");
-    vlastniKruh.setAttribute("src", hlavniBarva);
-    vlastniKruh.setAttribute("id", "Kruh" + i);
-    vlastniKruh.setAttribute("class", "kruh");
-    vlastniKruh.setAttribute("onclick", "SpravneKliknuti(event)");
-    document.body.appendChild(vlastniKruh);
-    VymazatKruh(event, vlastniKruh);
+    VytvorKruh(event, hlavniBarva, "SpravneKliknuti(event)");
+}
+}
 
-    kruhX = Math.floor(Math.random() *(documentSirka - delkaX));
-    kruhY = Math.floor(Math.random() * (documentVyska - delkaY));
+function VytvorKruh(event, barva, akce) {
+    kruh = document.createElement("img");
+    kruh.setAttribute("src", barva);
+    kruh.setAttribute("id", "Kruh" + i);
+    kruh.setAttribute("class", "kruh");
+    kruh.setAttribute("onclick", akce);
+    document.body.appendChild(kruh);
+    VymazatKruh(event, kruh);
 
-    vlastniKruh.style.left = kruhX + "px";
-    vlastniKruh.style.top = kruhY + "px";
+    kruhX = Math.floor(Math.random() * 6) * documentSirka*0.12 + documentSirka*0.2;
+    if (malaObrazovka.matches) {
+    kruhY = documentVyska*0.55;
+    } else {
+    kruhY = documentVyska*0.7;
+    }
+
+    kruh.style.left = kruhX + "px";
+    kruh.style.top = kruhY + "px";
 
     i++;
 }
-}
-
 
 function SpatneKliknuti(event) {
     skore = skore - 5;
@@ -141,14 +134,13 @@ function KonecHry(event) {
     napis.style.visibility = "visible";
     var kruhy = document.getElementsByClassName("kruh");
     for (i = 0; i < kruhy.length; i++) {
-    kruhy[i].remove();
+    kruhy[i].style.visibility = "hidden";
     }
     velkyKruh.remove();
-    setTimeout(function(){    tlacitkoZnovu.style.visibility = "visible";
+   tlacitkoZnovu.style.visibility = "visible";
     tlacitkoZnovu.style.marginTop = "50px";
     tlacitkoDomu.style.visibility = "visible";
     anchorDomu.style.visibility = "visible";
-    }, 1000)
 }
 
 function PocitadloCasu(event) {
