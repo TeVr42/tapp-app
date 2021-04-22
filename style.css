@@ -5,7 +5,7 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-h1, h2 {
+h1, h2, h3 {
     font-family: 'Original Surfer', cursive;
 }
 h1{
@@ -14,7 +14,9 @@ h1{
 h2 {
     font-size: 3rem;
 }
-
+h3 {
+    font-size: 2rem;
+}
 .info-text {
     font-size: 1.2rem;
     text-align: justify;
@@ -50,7 +52,7 @@ h2 {
 }
 
 .velky-kruh {
-    width: 5%;
+    width: 6%;
 }
 
 .kruh-tlacitko {
@@ -76,6 +78,6 @@ h1 {
     margin: 5px 20%;
 }
 .velky-kruh {
-    width: 10%;
+    width: 12%;
 }
 }

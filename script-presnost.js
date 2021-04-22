@@ -9,7 +9,7 @@ var delkaY = documentVyska * 0.11;
 var kruhX;
 var kruhY;
 
-var skore = 5;
+var skore = 6;
 var hraBezi = true;
 var i = 0;
 var vteriny = 0;
@@ -28,6 +28,7 @@ var napis = document.getElementById("napis-presnost");
 var casNapis = document.getElementById("casovac");
 var tlacitkoDomu = document.getElementById("domu-presnost");
 var anchorDomu = document.getElementById("domu-a");
+var napisProcenta = document.getElementById("procenta-presnost");
 
 function Hrat(event, rychlost) {
     var index = Math.floor(Math.random() * zdrojeObrazku.length);
@@ -43,6 +44,7 @@ function Hrat(event, rychlost) {
     napis.textContent = "Tvá barva:";
     velkyKruh.style.visibility = "visible";
     casNapis.style.visibility = "visible";
+    napisProcenta.style.visibility = "visible";
     setInterval(GenerujKruhy, 200);
     setInterval(PocitadloCasu, 1000)
 }
@@ -58,17 +60,16 @@ function GenerujKruhy(event) {
 
 function VytvorCiziKruh(event) {
     if (hraBezi) {
-    
     var index = Math.floor(Math.random() * zdrojeObrazku.length);
     var zdroj = zdrojeObrazku[index];
     var barva = "images/" + zdroj;
-    VytvorKruh(event, barva, "SpatneKliknuti(event)");
+    VytvorKruh(event, barva, "KlinutiNaKruh(event, -5)");
 }
 }
 
 function VytvorVlastniKruh(event) {
     if (hraBezi) {
-    VytvorKruh(event, hlavniBarva, "SpravneKliknuti(event)");
+    VytvorKruh(event, hlavniBarva, "KlinutiNaKruh(event, 1)");
 }
 }
 
@@ -94,23 +95,12 @@ function VytvorKruh(event, barva, akce) {
     i++;
 }
 
-function SpatneKliknuti(event) {
-    skore = skore - 5;
-    KlinutiNaKruh(event)
-}
-
-
-function SpravneKliknuti(event) {
-    skore ++;
-    KlinutiNaKruh(event)
-}
-
-
 function VymazatKruh(event, kruhKVymazani) {
     setTimeout(function(){ kruhKVymazani.remove(); }, rychlostVymazani);
 }
 
-function KlinutiNaKruh(event) {
+function KlinutiNaKruh(event, skoreUprava) {
+    skore = skore + skoreUprava;
     document.getElementById(event.target.id).remove();
     var rychlost;
     if (malaObrazovka.matches) { 
@@ -118,14 +108,16 @@ function KlinutiNaKruh(event) {
     } else {
     velkyKruh.style.width = skore + "%";
     }
-    
-    if (skore >= 15) {
+    napisProcenta.textContent = skore * 5 + "%";
+    if (skore >= 20) {
         KonecHry();
         napis.textContent = "Výhra!";
+        napisProcenta.textContent = "100 %";
     }
     if (skore <= 0) {
         KonecHry();
         napis.textContent = "Prohra!";
+        napisProcenta.textContent = "0 %";
     }
 }
 
