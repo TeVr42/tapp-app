@@ -125,7 +125,7 @@ function KlinutiNaKruh(event) {
     velkyKruh.style.width = skore + "%";
     }
     
-    if (skore >= 25) {
+    if (skore >= 15) {
         KonecHry();
         napis.textContent = "Výhra!";
     }
@@ -142,13 +142,11 @@ function KonecHry(event) {
     for (i = 0; i < kruhy.length; i++) {
     kruhy[i].remove();
     }
-    velkyKruh.style.visibility = "hidden";
-
+    velkyKruh.remove();
     setTimeout(function(){    tlacitkoZnovu.style.visibility = "visible";
     tlacitkoZnovu.style.marginTop = "50px";
     tlacitkoDomu.style.visibility = "visible";
-    tlacitkoDomu.style.marginTop = "-20px";
-    }, 2000)
+    }, 1000)
 }
 
 function PocitadloCasu(event) {
