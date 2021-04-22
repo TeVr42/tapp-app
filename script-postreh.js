@@ -65,13 +65,17 @@ function PriKliknuti(event) {
     }
     if (vsechnyKruhy.length == 0) {
     napis.style.visibility = "visible";
+    napis.style.marginTop = "50px";
+    napis.textContent = "Uklizeno!";
+
+    hraBezi = false;
+
+    setTimeout(function(){  
     tlacitkoZnovu.style.visibility = "visible";
     tlacitkoDomu.style.visibility = "visible";
     tlacitkoDomu.style.marginTop = "-100px";
-    napis.style.marginTop = "50px";
     tlacitkoZnovu.style.marginTop = "50px";
-    napis.textContent = "Uklizeno!";
-    hraBezi = false;
+    }, 1000)
     }
 }
 
