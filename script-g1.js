@@ -5,12 +5,11 @@ var documentVyska = document.documentElement.clientHeight;
 var malaObrazovka = window.matchMedia("(max-width: 600px)");
 
 if (malaObrazovka.matches) {
-var delkaX = documentDelka * 0.10;
-var delkaY = documentVyska * 0.1;
+var delkaX = documentDelka * 0.15;
 } else {
 var delkaX = documentDelka * 0.05;
-var delkaY = documentVyska * 0.15;
 }
+
 var kruhX;
 var kruhY;
 
@@ -51,7 +50,7 @@ function VytvorKruh(event) {
     document.body.appendChild(kruh);
 
     kruhX = Math.floor(Math.random() *(documentDelka - delkaX));
-    kruhY = Math.floor(Math.random() * (documentVyska - delkaY));
+    kruhY = Math.floor(Math.random() * (documentVyska - delkaX));
 
     kruh.style.left = kruhX + "px";
     kruh.style.top = kruhY + "px";

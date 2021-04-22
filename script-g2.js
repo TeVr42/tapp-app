@@ -4,8 +4,6 @@ var documentSirka = document.documentElement.clientWidth;
 var documentVyska = document.documentElement.clientHeight;
 var malaObrazovka = window.matchMedia("(max-width: 600px)");
 
-var delkaX = documentSirka * 0.11;
-var delkaY = documentVyska * 0.11;
 var kruhX;
 var kruhY;
 
@@ -83,7 +81,7 @@ function VytvorKruh(event, barva, akce) {
     VymazatKruh(event, kruh);
 
     if (malaObrazovka.matches) {
-    kruhX = Math.floor(Math.random() * 6) * documentSirka*0.14 + documentSirka*0.10;
+    kruhX = Math.floor(Math.random() * 6) * documentSirka*0.16 + documentSirka*0.02;
     kruhY = documentVyska*0.55;
     } else {
     kruhX = Math.floor(Math.random() * 6) * documentSirka*0.10 + documentSirka*0.22;
