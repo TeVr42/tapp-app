@@ -39,6 +39,9 @@ function Hrat(event, rychlost) {
     tlacitkoHrat1.remove();
     tlacitkoHrat2.remove();
     tlacitkoHrat3.remove();
+    tlacitkoZnovu.style.position = "static";
+    tlacitkoDomu.style.visibility = "hidden";
+    anchorDomu.style.visibility = "hidden";
     napis.textContent = "Tvá barva:";
     velkyKruh.style.visibility = "visible";
     casNapis.style.visibility = "visible";

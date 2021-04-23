@@ -14,6 +14,7 @@ function Hrat(event) {
     tlacitkoHrat.remove();
     napis.style.visibility = "hidden";
     bilyKruh.style.visibility = "visible";
+    tlacitkoDomu.style.visibility = "hidden";
     var nahodnyCas = Math.floor(Math.random() * 8000) + 500;
     setTimeout(SpustitOdpocet, nahodnyCas);
 }

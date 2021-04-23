@@ -35,6 +35,8 @@ function VytvorKruh(event) {
         tlacitko3.remove();
         tlacitko4.remove();
         napis.style.visibility = "hidden";
+        tlacitkoDomu.style.visibility = "hidden";
+        anchorDomu.style.visibility = "hidden";
         skoreNapis.style.visibility = "visible";
     }
     if (hraBezi) {
