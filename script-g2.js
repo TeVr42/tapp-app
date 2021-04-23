@@ -15,13 +15,11 @@ var minuty = 0;
 var rychlostVymazani;
 
 var velkyKruh = document.getElementById("velky-kruh");
-velkyKruh.style.visibility = "hidden";
 var hlavniBarva;
 
 var tlacitkoZnovu = document.getElementById("tZnovu");
-var tlacitkoHrat1 = document.getElementById("tHrat1");
-var tlacitkoHrat2 = document.getElementById("tHrat2");
-var tlacitkoHrat3 = document.getElementById("tHrat3");
+var tlacitka = [document.getElementById("tHrat1"), document.getElementById("tHrat2"),  document.getElementById("tHrat3")]
+
 var napis = document.getElementById("napis-presnost");
 var casNapis = document.getElementById("casovac");
 var tlacitkoDomu = document.getElementById("domu-presnost");
@@ -36,16 +34,13 @@ function Hrat(rychlost) {
     velkyKruh.setAttribute("src", hlavniBarva);
     zdrojeObrazku.splice(index, 1);
 
-    tlacitkoHrat1.remove();
-    tlacitkoHrat2.remove();
-    tlacitkoHrat3.remove();
+    for (i = 0; i < tlacitka.length; i++) {
+        tlacitka[i].remove();
+    }
     tlacitkoZnovu.style.position = "static";
-    tlacitkoDomu.style.visibility = "hidden";
-    anchorDomu.style.visibility = "hidden";
     napis.textContent = "Tvá barva:";
-    velkyKruh.style.visibility = "visible";
-    casNapis.style.visibility = "visible";
-    napisProcenta.style.visibility = "visible";
+    Schovat([tlacitkoDomu, anchorDomu]);
+    Zviditelnit([velkyKruh, casNapis, napisProcenta]);
     setInterval(GenerujKruhy, 200);
     setInterval(PocitadloCasu, 1000)
 }
@@ -127,15 +122,10 @@ function KonecHry() {
     hraBezi = false
     napis.style.visibility = "visible";
     var kruhy = document.getElementsByClassName("kruh");
-    for (i = 0; i < kruhy.length; i++) {
-    kruhy[i].style.visibility = "hidden";
-    }
+    Schovat(kruhy);
     velkyKruh.remove();
-    tlacitkoZnovu.style.visibility = "visible";
-    tlacitkoDomu.style.visibility = "visible";
-    anchorDomu.style.visibility = "visible";
+    Zviditelnit([tlacitkoZnovu, tlacitkoDomu, anchorDomu]);
     tlacitkoZnovu.style.marginTop = "50px";
-
 }
 
 function PocitadloCasu() {
@@ -165,6 +155,19 @@ function PocitadloCasu() {
     casNapis.textContent = napisMinuty + ":" + napisVeteriny;
     }
 }
+
+function Schovat(elements) {
+    for (i = 0; i < elements.length; i++) {
+    elements[i].style.visibility = "hidden";
+    }
+}
+
+function Zviditelnit(elements) {
+    for (i = 0; i < elements.length; i++) {
+    elements[i].style.visibility = "visible";
+    }
+}
+
 function HratZnovu() {
     location.reload();
 }

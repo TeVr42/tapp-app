@@ -12,17 +12,16 @@ var hraBezi = true;
 
 function Hrat() {
     tlacitkoHrat.remove();
-    napis.style.visibility = "hidden";
-    bilyKruh.style.visibility = "visible";
-    tlacitkoDomu.style.visibility = "hidden";
+    Schovat([napis, tlacitkoDomu]);
+    Zviditelnit([bilyKruh]);
     var nahodnyCas = Math.floor(Math.random() * 8000) + 500;
     setTimeout(SpustitOdpocet, nahodnyCas);
 }
 
 function SpustitOdpocet() {
     if (hraBezi) {
-    velkyKruh.style.visibility = "visible";
-    bilyKruh.style.visibility = "hidden";
+    Schovat([bilyKruh]);
+    Zviditelnit([velkyKruh]);
     start = Date.now();
     }
 }
@@ -42,12 +41,22 @@ function SpravneKliknuti() {
 
 function Konec() {
     hraBezi = false;
-    napis.style.visibility = "visible";
-    tlacitkoZnovu.style.visibility = "visible";
-    velkyKruh.style.visibility = "hidden";
-    bilyKruh.style.visibility = "hidden";
+    Zviditelnit([napis, tlacitkoZnovu, tlacitkoDomu]);
+    Schovat([velkyKruh, bilyKruh]);
     tlacitkoZnovu.style.marginTop = "50px";
-    tlacitkoDomu.style.visibility = "visible";
+
+}
+
+function Schovat(elements) {
+    for (i = 0; i < elements.length; i++) {
+    elements[i].style.visibility = "hidden";
+    }
+}
+
+function Zviditelnit(elements) {
+    for (i = 0; i < elements.length; i++) {
+    elements[i].style.visibility = "visible";
+    }
 }
 
 function HratZnovu() {

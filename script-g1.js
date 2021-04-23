@@ -19,10 +19,9 @@ var i = 0;
 
 var skoreNapis = document.getElementById("skore");
 var tlacitkoZnovu = document.getElementById("tlacitkoZnovu");
-var tlacitko1 = document.getElementById("button1");
-var tlacitko2 = document.getElementById("button2");
-var tlacitko3 = document.getElementById("button3");
-var tlacitko4 = document.getElementById("button4");
+
+var tlacitka = [document.getElementById("button1"), document.getElementById("button2"),  document.getElementById("button3"), document.getElementById("button4")]
+
 var napis = document.getElementById("napis-postreh");
 var tlacitkoDomu = document.getElementById("domu-postreh");
 var anchorDomu = document.getElementById("anchor-postreh");
@@ -30,14 +29,11 @@ var anchorDomu = document.getElementById("anchor-postreh");
 
 function VytvorKruh() {
     if (i == 0) {
-        tlacitko1.remove();
-        tlacitko2.remove();
-        tlacitko3.remove();
-        tlacitko4.remove();
-        napis.style.visibility = "hidden";
-        tlacitkoDomu.style.visibility = "hidden";
-        anchorDomu.style.visibility = "hidden";
-        skoreNapis.style.visibility = "visible";
+        for (i = 0; i < tlacitka.length; i++) {
+            tlacitka[i].remove();
+        }
+        Schovat([napis, tlacitkoDomu, anchorDomu]);
+        Zviditelnit([skoreNapis]);
     }
     if (hraBezi) {
     var kruh = document.createElement("img");
@@ -72,19 +68,28 @@ function PriKliknuti(event) {
     }
     var kruhy = document.getElementsByClassName("kruh");
     if (kruhy.length == 0) {
-    napis.style.visibility = "visible";
+    Zviditelnit([napis]);
     napis.style.marginTop = "50px";
     napis.textContent = "Uklizeno!";
 
     hraBezi = false;
 
     setTimeout(function(){
-    tlacitkoZnovu.style.visibility = "visible";
-    tlacitkoDomu.style.visibility = "visible";
-    anchorDomu.style.visibility = "visible";
-    tlacitkoDomu.style.marginTop = "-100px";
+    Zviditelnit([tlacitkoZnovu, tlacitkoDomu, anchorDomu]);
     tlacitkoZnovu.style.marginTop = "50px";
     }, 1000)
+    }
+}
+
+function Schovat(elements) {
+    for (i = 0; i < elements.length; i++) {
+    elements[i].style.visibility = "hidden";
+    }
+}
+
+function Zviditelnit(elements) {
+    for (i = 0; i < elements.length; i++) {
+    elements[i].style.visibility = "visible";
     }
 }
 
