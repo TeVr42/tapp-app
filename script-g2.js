@@ -28,7 +28,7 @@ var tlacitkoDomu = document.getElementById("domu-presnost");
 var anchorDomu = document.getElementById("domu-a");
 var napisProcenta = document.getElementById("procenta-presnost");
 
-function Hrat(event, rychlost) {
+function Hrat(rychlost) {
     var index = Math.floor(Math.random() * zdrojeObrazku.length);
     var zdroj = zdrojeObrazku[index];
     rychlostVymazani = rychlost;
@@ -50,7 +50,7 @@ function Hrat(event, rychlost) {
     setInterval(PocitadloCasu, 1000)
 }
 
-function GenerujKruhy(event) {
+function GenerujKruhy() {
     var nahodnaAkce = Math.floor(Math.random() * 2);
     if (nahodnaAkce == 0) {
         VytvorCiziKruh();
@@ -59,29 +59,29 @@ function GenerujKruhy(event) {
     }
 }
 
-function VytvorCiziKruh(event) {
+function VytvorCiziKruh() {
     if (hraBezi) {
     var index = Math.floor(Math.random() * zdrojeObrazku.length);
     var zdroj = zdrojeObrazku[index];
     var barva = "images/" + zdroj;
-    VytvorKruh(event, barva, "KlinutiNaKruh(event, -5)");
+    VytvorKruh(barva, "KlinutiNaKruh(event, -5)");
 }
 }
 
-function VytvorVlastniKruh(event) {
+function VytvorVlastniKruh() {
     if (hraBezi) {
-    VytvorKruh(event, hlavniBarva, "KlinutiNaKruh(event, 1)");
+    VytvorKruh(hlavniBarva, "KlinutiNaKruh(event, 1)");
 }
 }
 
-function VytvorKruh(event, barva, akce) {
+function VytvorKruh(barva, akce) {
     kruh = document.createElement("img");
     kruh.setAttribute("src", barva);
     kruh.setAttribute("id", "Kruh" + i);
     kruh.setAttribute("class", "kruh");
     kruh.setAttribute("onclick", akce);
     document.body.appendChild(kruh);
-    VymazatKruh(event, kruh);
+    VymazatKruh(kruh);
 
     if (malaObrazovka.matches) {
     kruhX = Math.floor(Math.random() * 6) * documentSirka*0.16 + documentSirka*0.02;
@@ -97,7 +97,7 @@ function VytvorKruh(event, barva, akce) {
     i++;
 }
 
-function VymazatKruh(event, kruhKVymazani) {
+function VymazatKruh(kruhKVymazani) {
     setTimeout(function(){ kruhKVymazani.remove(); }, rychlostVymazani);
 }
 
@@ -123,7 +123,7 @@ function KlinutiNaKruh(event, skoreUprava) {
     }
 }
 
-function KonecHry(event) {
+function KonecHry() {
     hraBezi = false
     napis.style.visibility = "visible";
     var kruhy = document.getElementsByClassName("kruh");
@@ -138,7 +138,7 @@ function KonecHry(event) {
 
 }
 
-function PocitadloCasu(event) {
+function PocitadloCasu() {
     if (hraBezi){    
     vteriny ++;
 
@@ -165,6 +165,6 @@ function PocitadloCasu(event) {
     casNapis.textContent = napisMinuty + ":" + napisVeteriny;
     }
 }
-function HratZnovu(event) {
+function HratZnovu() {
     location.reload();
 }

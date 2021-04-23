@@ -28,7 +28,7 @@ var tlacitkoDomu = document.getElementById("domu-postreh");
 var anchorDomu = document.getElementById("anchor-postreh");
 
 
-function VytvorKruh(event) {
+function VytvorKruh() {
     if (i == 0) {
         tlacitko1.remove();
         tlacitko2.remove();
@@ -88,6 +88,6 @@ function PriKliknuti(event) {
     }
 }
 
-function HratZnovu(event) {
+function HratZnovu() {
     location.reload();
 }

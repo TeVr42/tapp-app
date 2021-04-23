@@ -10,7 +10,7 @@ var tlacitkoDomu = document.getElementById("domu-rychlost");
 var start;
 var hraBezi = true;
 
-function Hrat(event) {
+function Hrat() {
     tlacitkoHrat.remove();
     napis.style.visibility = "hidden";
     bilyKruh.style.visibility = "visible";
@@ -19,7 +19,7 @@ function Hrat(event) {
     setTimeout(SpustitOdpocet, nahodnyCas);
 }
 
-function SpustitOdpocet(event) {
+function SpustitOdpocet() {
     if (hraBezi) {
     velkyKruh.style.visibility = "visible";
     bilyKruh.style.visibility = "hidden";
@@ -27,12 +27,12 @@ function SpustitOdpocet(event) {
     }
 }
 
-function PredcasneKliknuti(event) {
+function PredcasneKliknuti() {
     Konec();
     napis.textContent = "Moc brzo!";
 }
 
-function SpravneKliknuti(event) {
+function SpravneKliknuti() {
     Konec();
     var prodleva = (Date.now() - start) + " milisekund";
     napis.textContent = prodleva;
@@ -40,7 +40,7 @@ function SpravneKliknuti(event) {
 }
 
 
-function Konec(event) {
+function Konec() {
     hraBezi = false;
     napis.style.visibility = "visible";
     tlacitkoZnovu.style.visibility = "visible";
@@ -50,6 +50,6 @@ function Konec(event) {
     tlacitkoDomu.style.visibility = "visible";
 }
 
-function HratZnovu(event) {
+function HratZnovu() {
     location.reload();
 }
